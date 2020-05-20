@@ -1,19 +1,17 @@
 //grow api https://api.jqueryui.com/scale-effect/
 
-var gDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);//properties
+var GrowyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('gDancer');
+};
 
- this.$node.addClass('gDancer');
+GrowyDancer.prototype = Object.create(Dancer.prototype);
 
-}
-gDancer.prototype = Object.create(makeDancer.prototype);//methods
-gDancer.prototype.constructor = gDancer;
+GrowyDancer.prototype.constructor = GrowyDancer;
 
-gDancer.prototype.step = function(){
-
-  makeDancer.prototype.step.call(this);
+GrowyDancer.prototype.step = function(){
+  Dancer.prototype.step.call(this);
   //individual dancer properties
-
   this.$node
   .animate({
     width: '100px',

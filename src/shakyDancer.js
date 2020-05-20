@@ -1,18 +1,16 @@
-var sDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);//properties
+var ShakyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);//properties
   this.top = top;
   this.left = left;
-
   this.$node.addClass('sDancer');
-}
+};
 
-sDancer.prototype = Object.create(makeDancer.prototype);//methods
+ShakyDancer.prototype = Object.create(Dancer.prototype);//methods
 
-sDancer.prototype.constructor = sDancer;
+ShakyDancer.prototype.constructor = ShakyDancer;
 
-sDancer.prototype.step = function(){
-
-  makeDancer.prototype.step.call(this);
+ShakyDancer.prototype.step = function(){
+  Dancer.prototype.step.call(this);
 
   let shiftTop = this.top + 10;
   let shiftLeft = this.left + 10;
@@ -28,7 +26,6 @@ sDancer.prototype.step = function(){
     "top":`${shiftTop2}`,
     "left":`${shiftLeft2}`
   })
-  // console.log(this.top);
 };
 
 

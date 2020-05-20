@@ -35,7 +35,6 @@ $(document).ready(function() {
   $('.lineUp').on('click', function(event){
     for(let i = 0; i < window.dancers.length; i++){
       makeDancer.prototype.setPosition.call(window.dancers[i], (2+(i*30)), 0);
-
     }
 
   });
